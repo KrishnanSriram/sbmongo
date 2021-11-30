@@ -17,8 +17,8 @@ public class EmployeeService {
         return employeeRepository.save(employee);
     }
 
-    public Optional<Employee> findEmployee(int employeeId) {
-        return employeeRepository.findById(employeeId);
+    public Optional<Employee> findEmployee(String employeeId) {
+        return employeeRepository.findByEmployeeId(employeeId);
     }
 
     public List<Employee> listAllEmployees() {

@@ -17,7 +17,7 @@ public class EmployeeController {
     private EmployeeService employeeService;
 
     @GetMapping("/{employeeId}")
-    public ResponseEntity<Employee> findEmployeeById(@PathVariable("employeeId") int employeeId) {
+    public ResponseEntity<Employee> findEmployeeById(@PathVariable("employeeId") String employeeId) {
         Optional<Employee> employee = employeeService.findEmployee(employeeId);
         if(employee.isPresent()) {
             return new ResponseEntity<>(employee.get(), HttpStatus.OK);
